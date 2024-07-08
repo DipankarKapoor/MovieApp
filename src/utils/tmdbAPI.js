@@ -13,7 +13,7 @@ export const fetchMovies = async (year, genreId) => {
   );
   const data = await response.json();
   // console.log(data.results)
-  return data.results;
+  return data.results.slice(0, 20); // Limit to 20 movies per request
 };
 
 export const fetchMovieDetails = async (movieId) => {
@@ -26,6 +26,6 @@ export const fetchMovieDetails = async (movieId) => {
 export const fetchMovieCredits = async (movieId) => {
   const response = await fetch(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`);
   const data = await response.json();
-  console.log(data)
+  // console.log(data)
   return data; //returns an object with keys id, cast and crew
 };
