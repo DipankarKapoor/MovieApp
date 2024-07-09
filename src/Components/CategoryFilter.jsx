@@ -6,7 +6,7 @@ import GenreContext from '../GenreContext.js';
 
 const CategoryFilter = () => {
   const [genres, setGenres] = useState([]);
-  const {selectedGenre, setSelectedGenre}= useContext(GenreContext);
+  const { selectedGenre, setSelectedGenre } = useContext(GenreContext);
   const { currentYear, setCurrentYear } = useContext(DateContext);
   const { setMovies } = useContext(MovieContext);
 
@@ -14,9 +14,9 @@ const CategoryFilter = () => {
     //fetches genre from the API and sets it to the state
     const getGenres = async () => {
       const genres = await fetchGenres();
-      setGenres(genres);
-      //Load the first genre by default with date 2012
+      setGenres(genres); //Load the first genre by default with date 2012
       setSelectedGenre(genres[0].id);
+      setCurrentYear(2012); // Reset year
       const defaultMovieList = await fetchMovies(currentYear, genres[0].id);
       setMovies(defaultMovieList);
     };
@@ -27,7 +27,7 @@ const CategoryFilter = () => {
   const handleGenreClick = async (genreId) => {
     setSelectedGenre(genreId);
     // setCurrentYear(2012);
-    const newMoviesFetched = await fetchMovies(currentYear, genreId);
+    const newMoviesFetched = await fetchMovies(2012, genreId);
     setMovies(newMoviesFetched);
   };
 
