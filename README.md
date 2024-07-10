@@ -21,5 +21,9 @@ List of requirements covered:
 4. Implemented smooth scrolling behavior to load more movies as the user scrolls below.
 5. Implemented lazy loading for the movie cards.
 6. Made the website responsive for all devices using mobiles and tablets.
-7. Fresh list of movies loaded when user selects a new genre. 
-   
+7. Fresh list of movies loaded when user selects a new genre.
+8. Used ContextAPI for better state management.
+
+Requirements not covered:
+1. Couldn't add scroll in opposite direction i.e. movies won't be loaded before 2012 if you scroll up.
+2. Only one genre filter can be selected at a time.
