@@ -1,16 +1,15 @@
-import React, { lazy, Suspense, useContext, useState } from 'react';
-import { fetchMovies, fetchMovieDetails } from '../utils/tmdbAPI';
+import React, { lazy, Suspense, useContext } from 'react';
+import { fetchMovies } from '../utils/tmdbAPI';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import MovieContext from '../MovieContext';
-import DateContext from '../DateContext.js';
-import GenreContext from '../GenreContext.js';
+import MovieContext from '../Context/MovieContext';
+import DateContext from '../Context/DateContext.js';
+import GenreContext from '../Context/GenreContext.js';
 const Movie = lazy(() => import('./Movie'));
 
 const MovieList = () => {
   const { selectedGenre } = useContext(GenreContext);
   const { movies, setMovies } = useContext(MovieContext);
   const { currentYear, setCurrentYear } = useContext(DateContext);
-  const [releaseYear, setReleaseYear] = useState(null);
 
   const fetchMoreData = async () => {
     setCurrentYear(prevYear => prevYear + 1);

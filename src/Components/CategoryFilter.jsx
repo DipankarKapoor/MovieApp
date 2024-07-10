@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { fetchGenres, fetchMovies } from '../utils/tmdbAPI';
-import DateContext from '../DateContext.js';
-import MovieContext from '../MovieContext.js';
-import GenreContext from '../GenreContext.js';
+import DateContext from '../Context/DateContext.js';
+import MovieContext from '../Context/MovieContext.js';
+import GenreContext from '../Context/GenreContext.js';
 
 const CategoryFilter = () => {
   const [genres, setGenres] = useState([]);

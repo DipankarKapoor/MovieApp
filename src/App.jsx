@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import Header from './Components/Header'
 import CategoryFilter from './Components/CategoryFilter'
 import MovieList from './Components/MovieList'
-import DateContext from './DateContext'
-import MovieContext from './MovieContext'
-import GenreContext from './GenreContext'
+import DateContext from './Context/DateContext'
+import MovieContext from './Context/MovieContext'
+import GenreContext from './Context/GenreContext'
 import './App.css'
 
 function App() {
