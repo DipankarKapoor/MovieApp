@@ -26,7 +26,8 @@ const CategoryFilter = () => {
   // Handles the genre click
   const handleGenreClick = async (genreId) => {
     setSelectedGenre(genreId);
-    // setCurrentYear(2012);
+    setCurrentYear(2012);
+    //Have added 2012 and genreID as state update is scheduled but it isn't updated immediately
     const newMoviesFetched = await fetchMovies(2012, genreId);
     setMovies(newMoviesFetched);
   };

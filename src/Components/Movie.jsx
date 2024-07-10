@@ -1,16 +1,21 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { fetchMovieDetails, fetchMovieCredits } from '../utils/tmdbAPI';
-
 const Movie = (props) => {
     //  Each movie which is in the form of an object is being passed as props
     const [details, setDetails] = useState(null);
     const [cast, setCast] = useState([]);
     const [director, setDirector] = useState(null);
+    const [releaseYear, setReleaseYear] = useState(null);
 
     useEffect(() => {
         const getMovieDetails = async () => {
             const movieDetails = await fetchMovieDetails(props.movie.id);
             setDetails(movieDetails);
+
+            //fetches release year
+            const movieYear = movieDetails.release_date.slice(0,4);
+            setReleaseYear(movieYear ? movieYear : 'Unknown');
+
             //fetches movie credits including cast and crew
             const movieData = await fetchMovieCredits(props.movie.id);
 
@@ -34,6 +39,7 @@ const Movie = (props) => {
             <img src={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`} alt={props.movie.title} className="movie-card-image" />
             <div className="movie-card-content">
                 <h2 className="movie-card-title">{props.movie.title}</h2>
+                <p className="movie-card-release-year">{releaseYear}</p>
                 {details && (
                     <p className="movie-card-genres">{details.genres.map(genre => genre.name).join(', ')}</p>
                 )}

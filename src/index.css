@@ -1,29 +1,31 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
-margin: 0;
-padding: 0;
-width: 100%;
-height: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
   background-color: rgb(68 68 68);
-  color:  rgb(255 0 0);
-  padding: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
+  color: rgb(255 0 0);
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 2.5rem;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
 }
 
 .category-filter {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 1rem;
   background-color: #444;
 }
 
@@ -35,7 +37,7 @@ height: 100%;
   color: white;
   border: none; */
   cursor: pointer;
-  
+
 }
 
 .category-button:hover {
@@ -52,13 +54,14 @@ height: 100%;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 1em;
-  background-color: #444444;
-  margin:0px;
+  background-color: #252323;
+  margin: 0px;
 }
 
 .movie-card {
+  display: flex;
+  flex-direction: column;
   background-color: #1c1c1c;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 16px;
@@ -78,6 +81,14 @@ height: 100%;
   object-fit: cover;
 }
 
+.movie-card-release-year {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+  margin-top: 0.2rem;
+}
+
 .movie-card-content {
   display: flex;
   flex-direction: column;
@@ -85,16 +96,17 @@ height: 100%;
 
 .movie-card-title {
   font-size: 1em;
-  margin: 0;
+  margin-top: 0.5em;
 }
 
 .movie-card-genres,
- h4 {
+h4 {
   font-size: 0.75em;
   margin: 8px 0;
 }
 
-.movie-card-director,.movie-card-cast{
+.movie-card-director,
+.movie-card-cast {
   font-size: 0.75em;
   margin: 8px 0 0 0;
 }
@@ -108,4 +120,35 @@ height: 100%;
   -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width:768px) {
+
+  .movie-card {
+    padding: 0;
+  }
+
+  .movies-container {
+    gap: 0;
+  }
+}
+
+@media (max-width:600px) {
+
+  .movie-card {
+    padding: 0;
+    width: 85%;
+  }
+
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-card-image {
+  object-fit: scale-down;
+}
+
 }

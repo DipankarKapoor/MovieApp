@@ -12,7 +12,7 @@ export const fetchMovies = async (year, genreId) => {
     `${BASE_URL}/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&primary_release_year=${year}&vote_count.gte=100&with_genres=${genreId}`
   );
   const data = await response.json();
-  console.log(data.results)
+  // console.log(data)
   return data.results.slice(0, 20); // Limit to 20 movies per request
 };
 
