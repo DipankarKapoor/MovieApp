@@ -14,7 +14,7 @@ Instructions to run:
 5. Run the following command to view the project: "npm run dev"
 6. The project uses Vite, running the command will return you a localhost link, Ctrl + Click to view the website :)
 
-List of requirements covered:
+Features:
 1. Display a list of movies sorted in descending order of popularity.
 2. Show the movie title, image, genre, cast, director, and a short description related to the movie in each information card.
 3. Loading 20 movies per year starting from 2012.
@@ -24,6 +24,3 @@ List of requirements covered:
 7. Fresh list of movies loaded when user selects a new genre.
 8. Used ContextAPI for better state management.
 
-Requirements not covered:
-1. Couldn't add scroll in opposite direction i.e. movies won't be loaded before 2012 if you scroll up.
-2. Only one genre filter can be selected at a time.
