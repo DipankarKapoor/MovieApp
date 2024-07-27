@@ -6,6 +6,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+How to run: 
+1. You'll need an API key to run this project. You can get your free API key to run this project at TMDB API.
+
 Features:
 1. Display a list of movies sorted in descending order of popularity.
 2. Show the movie title, image, genre, cast, director, and a short description related to the movie in each information card.
