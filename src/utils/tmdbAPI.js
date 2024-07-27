@@ -1,4 +1,4 @@
-const API_KEY = '2dca580c2a14b55200e784d157207b4d';
+const API_KEY = '';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 export const fetchGenres = async () => {
